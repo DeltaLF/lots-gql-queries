@@ -1,0 +1,11 @@
+.book-content {
+  height: 300px;
+}
+
+.fetch-history-content {
+  display: flex;
+}
+
+.fetch-history-content > .fetch-history-element {
+  margin: 4px;
+}

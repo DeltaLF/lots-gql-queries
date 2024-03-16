@@ -1,6 +1,7 @@
 import { books } from "./db/index";
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
+import { QueryHistory } from "./types";
 
 const typeDefs = `#graphql
   type Book {
@@ -15,14 +16,23 @@ const typeDefs = `#graphql
   }
 `;
 
+const queryBookHistory: QueryHistory[] = [];
+const queryBookResponseHistory: QueryHistory[] = [];
+
 const resolvers = {
   Query: {
     books: () => books,
-    book: (parent, args, contextValue, info) => {
+    book: (parent, args: { id?: number }, contextValue, info) => {
+      console.log("queryBookHistory:", queryBookHistory);
+      console.log("queryBookResponseHistory:", queryBookResponseHistory);
+      console.log("request comes args: ", args);
+      queryBookHistory.push({ id: args.id, time: new Date() });
       return new Promise((resolve, reject) => {
         setTimeout(() => {
+          console.log("response args: ", args);
+          queryBookResponseHistory.push({ id: args.id, time: new Date() });
           resolve(books.find((book) => book.id === args.id));
-        }, 1000 * Math.random());
+        }, 5000 * Math.random());
       });
     },
   },

@@ -1,9 +1,11 @@
+import Book from "./components/book";
 import Books from "./components/books";
 
 const GqlDemo = () => {
   return (
     <div>
-      <Books />{" "}
+      <Books />
+      <Book />
     </div>
   );
 };

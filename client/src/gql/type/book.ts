@@ -7,3 +7,11 @@ export type BookType = {
 export type QueryBooksType = {
   books: BookType[];
 };
+
+export type QueryBookType = {
+  book: BookType;
+};
+
+export type QueryBookVariable = {
+  id: number;
+};

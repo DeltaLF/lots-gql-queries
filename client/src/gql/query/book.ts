@@ -9,3 +9,13 @@ export const QUERY_BOOKS = gql`
     }
   }
 `;
+
+export const QUERY_BOOK = gql`
+  query Query($id: Int) {
+    book(id: $id) {
+      author
+      id
+      title
+    }
+  }
+`;
