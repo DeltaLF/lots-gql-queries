@@ -1,0 +1,17 @@
+.card-container {
+  border: 1px gray solid;
+  margin: 8px;
+  border-radius: 8px;
+  width: 220px;
+}
+
+.card-title {
+  padding: 0 8px;
+  border-bottom: 1px gray solid;
+}
+.card-title > h3 {
+  margin: 8px 0;
+}
+.card-content {
+  padding: 16px 8px;
+}
