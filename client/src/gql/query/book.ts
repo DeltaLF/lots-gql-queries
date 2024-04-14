@@ -5,7 +5,14 @@ export const QUERY_BOOKS = gql`
     books {
       title
       id
-      author
+      author {
+        id
+        name
+      }
+      recommendList {
+        id
+        name
+      }
     }
   }
 `;
@@ -13,7 +20,14 @@ export const QUERY_BOOKS = gql`
 export const QUERY_BOOK = gql`
   query Query($id: Int) {
     book(id: $id) {
-      author
+      author {
+        id
+        name
+      }
+      recommendList {
+        id
+        name
+      }
       id
       title
     }

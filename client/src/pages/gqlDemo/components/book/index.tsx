@@ -40,7 +40,12 @@ const Book = () => {
       <div className="book-content">
         {loading && <div>loading...</div>}
         {!loading && book && (
-          <Card id={book.id} author={book.author} title={book.title} />
+          <Card
+            id={book.id}
+            author={book.author}
+            title={book.title}
+            recommendList={book.recommendList}
+          />
         )}
         {!loading && !book && <h3>Book not found</h3>}
       </div>

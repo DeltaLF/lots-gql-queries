@@ -15,8 +15,16 @@ const Books = () => {
     <div>
       <h2>Fetch all books</h2>
       <div className="books-content">
-        {books?.map(({ id, author, title }) => {
-          return <Card key={id} id={id} author={author} title={title} />;
+        {books?.map(({ id, author, title, recommendList }) => {
+          return (
+            <Card
+              key={id}
+              id={id}
+              author={author}
+              title={title}
+              recommendList={recommendList}
+            />
+          );
         })}
       </div>
     </div>
