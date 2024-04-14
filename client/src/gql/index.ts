@@ -12,9 +12,9 @@ const defaultOptions: DefaultOptions = {
     errorPolicy: "all",
   },
 };
-
 export const client = new ApolloClient({
   uri: URI,
   cache: new InMemoryCache(),
   defaultOptions: defaultOptions,
+  connectToDevTools: true,
 });
